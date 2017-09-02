@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "891303010001",
+    "firebase_url": "https://wakalend.firebaseio.com",
+    "project_id": "wakalend",
+    "storage_bucket": "wakalend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891303010001:android:841f3479c420075c",
+        "android_client_info": {
+          "package_name": "com.heroku.andrewtenajeros.wakalend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891303010001-unn3p26m9lp1bvvtitr8qo0jkd1u7ejl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.heroku.andrewtenajeros.wakalend",
+            "certificate_hash": "a643a06bfc477109066f15df238f71d5b4bf0281"
+          }
+        },
+        {
+          "client_id": "891303010001-pmaq10486thabesgtls2v8tr57vkj8st.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.heroku.andrewtenajeros.wakalend",
+            "certificate_hash": "d3a8edbe1515c8ed508e3b3e8fe57bcc8d1ab29f"
+          }
+        },
+        {
+          "client_id": "891303010001-p7g5kptj0v9sm5f6eo8bv63tfe3mgdsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXbQSJjBqPR40CrIG9K8WFlhrhHKzrdW4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891303010001-p7g5kptj0v9sm5f6eo8bv63tfe3mgdsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
