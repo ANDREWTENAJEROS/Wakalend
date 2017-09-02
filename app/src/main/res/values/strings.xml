@@ -13,8 +13,9 @@
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
-
     </string>
+    <string name="promt_username">Enter a username</string>
+    <string name="hint_username">username</string>
     <string name="title_activity_collector">collector</string>
     <string name="title_activity_collectormenu">collectormenu</string>
     <string name="action_settings">Settings</string>
