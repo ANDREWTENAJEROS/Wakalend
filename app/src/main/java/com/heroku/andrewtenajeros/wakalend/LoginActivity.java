@@ -209,6 +209,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        showProgress(false);
                         if(!task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Can't register", Toast.LENGTH_SHORT).show();
                         }
