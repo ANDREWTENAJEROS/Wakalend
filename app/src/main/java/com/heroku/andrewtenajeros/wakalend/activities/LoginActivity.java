@@ -1,8 +1,9 @@
-package com.heroku.andrewtenajeros.wakalend;
+package com.heroku.andrewtenajeros.wakalend.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -13,7 +14,6 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -34,6 +34,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.heroku.andrewtenajeros.wakalend.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -214,12 +215,34 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         if(!task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Can't register", Toast.LENGTH_SHORT).show();
                         }
+                        else{
+                            //show user name dialouge
+                        }
 
                     }
                 });
             }
             else{//loging in
-                //show user name dialouge
+
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                showProgress(false);
+                                if (task.isSuccessful()) {
+                                    Intent intent = new Intent(getBaseContext(),collectormenu.class);
+                                    startActivity(intent);
+
+                                } else {
+
+                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+
+                                }
+
+
+                            }
+                        });
 
             }
 

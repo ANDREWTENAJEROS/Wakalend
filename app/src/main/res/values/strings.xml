@@ -15,5 +15,8 @@
         completions."
 
     </string>
+    <string name="title_activity_collector">collector</string>
+    <string name="title_activity_collectormenu">collectormenu</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
