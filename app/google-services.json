@@ -57,6 +57,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891303010001:android:5de71537fbe3445e",
+        "android_client_info": {
+          "package_name": "com.herokuapp.andrewtenajeros.wakalend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891303010001-kgsr16lp6kisv2jq4onmshb6tgrfm62s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.herokuapp.andrewtenajeros.wakalend",
+            "certificate_hash": "d3a8edbe1515c8ed508e3b3e8fe57bcc8d1ab29f"
+          }
+        },
+        {
+          "client_id": "891303010001-p7g5kptj0v9sm5f6eo8bv63tfe3mgdsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXbQSJjBqPR40CrIG9K8WFlhrhHKzrdW4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891303010001-p7g5kptj0v9sm5f6eo8bv63tfe3mgdsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

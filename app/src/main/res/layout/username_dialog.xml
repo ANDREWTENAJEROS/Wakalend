@@ -8,7 +8,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="FFFF8833"
         android:padding="10dp"
         android:text="@string/promt_username"
         tools:background="@color/common_google_signin_btn_text_dark_default" />
