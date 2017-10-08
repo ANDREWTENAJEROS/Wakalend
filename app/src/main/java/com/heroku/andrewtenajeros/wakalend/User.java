@@ -1,4 +1,6 @@
-package com.heroku.andrewtenajeros.android.model;
+package com.heroku.andrewtenajeros.wakalend;
+
+
 
 public class User {
 

@@ -1,27 +1,25 @@
-package com.heroku.andrewtenajeros.wakalend.activities;
+package com.heroku.andrewtenajeros.wakalend;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.LoaderManager.LoaderCallbacks;
+import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.Loader;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-
-import android.os.Build;
-import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -40,8 +38,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-import com.heroku.andrewtenajeros.android.model.User;
-import com.heroku.andrewtenajeros.wakalend.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,15 +73,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private double[] cash;
+    public static String USER_ID;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        // Set up the login form.
         mAuth = FirebaseAuth.getInstance();
 
-        // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
@@ -110,8 +108,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
 
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+
+
+
+
+
     }
 
     private void populateAutoComplete() {
@@ -131,7 +136,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
             Snackbar.make(mEmailView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
-                    .setAction(android.R.string.ok, new View.OnClickListener() {
+                    .setAction(android.R.string.ok, new OnClickListener() {
                         @Override
                         @TargetApi(Build.VERSION_CODES.M)
                         public void onClick(View v) {
@@ -215,11 +220,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         if(!task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Can't register", Toast.LENGTH_SHORT).show();
                         }
-                        else{
-                            //show user name dialouge
-                            UsernameDialogFragment dialog = new UsernameDialogFragment();
-                            dialog.show(getFragmentManager(),null);
-                        }
 
                     }
                 });
@@ -232,8 +232,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 showProgress(false);
                                 if (task.isSuccessful()) {
-                                    Intent intent = new Intent(getBaseContext(),collectormenu.class);
+                                     USER_ID = mAuth.getCurrentUser().getUid();
+                                    Intent intent = new Intent(getBaseContext(),adminmenu.class);
+                                    intent.putExtra(USER_ID,mAuth.getCurrentUser().getUid());
                                     startActivity(intent);
+                                    Toast.makeText(LoginActivity.this, "USER ID:"+ USER_ID, Toast.LENGTH_SHORT).show();
 
                                 } else {
 
@@ -357,34 +360,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
 
 
-    public static class UsernameDialogFragment extends DialogFragment{
-        @Override
 
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            // Get the layout inflater
-            LayoutInflater inflater = getActivity().getLayoutInflater();
+//    @SuppressLint("ValidFragment")
 
-            // Inflate and set the layout for the dialog
-            // Pass null as the parent view because its going in the dialog layout
-            builder.setView(inflater.inflate(R.layout.username_dialog, null))
-                    // Add action buttons
-                    .setPositiveButton(R.string.action_register, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int id) {
-                            // sign in the user ...
-                            EditText usernameField = (EditText)((AlertDialog)dialog).findViewById(R.id.username);
-                            String username = usernameField.getText().toString();
-                            String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                            User aUser = new User(username,"empty","empty");
 
-                            FirebaseDatabase.getInstance().getReference("users").child(userId).child("profile").setValue(aUser);
-
-                            Intent intent = new Intent(getActivity().getBaseContext(), collectormenu.class);
-                        }
-                    });
-            return builder.create();
-        }
-    }
 }
-

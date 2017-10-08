@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.heroku.andrewtenajeros.wakalend.ClientProfileActivity"
+    tools:showIn="@layout/activity_client_profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="RtlHardcoded,RtlSymmetry">
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/textView_Clienttxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/textView_Clientval"
+                    android:layout_width="304dp"
+                    android:layout_height="wrap_content"
+                    android:text="14-B"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+
+            >
+
+            <TextView
+                android:id="@+id/textView_barangaytxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address:"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView_barangayval"
+                android:layout_width="278dp"
+                android:layout_height="wrap_content"
+                android:text="14-B"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            >
+
+            <TextView
+                android:id="@+id/textView_districttxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact number:"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView_districtval"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:text="Sta. Ana"
+                android:paddingLeft="10dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="1">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView2"-->
+                <!--android:layout_width="143dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:text="Collector:"-->
+                <!--android:textSize="24sp" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/editText"-->
+                <!--android:layout_width="135dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:ems="10"-->
+                <!--android:hint="collector name"-->
+                <!--android:inputType="textPersonName"-->
+                <!--android:layout_weight="0.89" />-->
+
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--&gt;-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView2"-->
+                <!--android:layout_width="53dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="₱ "-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:textSize="24sp" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/editText"-->
+                <!--android:layout_width="241dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:ems="10"-->
+                <!--android:inputType="textPersonName"-->
+                <!--android:hint="loan amount" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/button2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="SAVE" />-->
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+
+            >
+
+            <TextView
+                android:id="@+id/textView_balancetxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Balance:"
+                android:textSize="30sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView_balanceval"
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Collect"
+            tools:ignore="HardcodedText" />
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:paddingTop="15dp"-->
+            <!--android:text="Edit client details"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="24sp" />-->
+        <!--<EditText-->
+            <!--android:id="@+id/firstname"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:layout_marginRight="4dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:hint="@string/hint_firstname"-->
+            <!--android:inputType="textEmailAddress" />-->
+        <!--<EditText-->
+            <!--android:id="@+id/lastname"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:layout_marginRight="4dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:hint="@string/hint_lastname"-->
+            <!--android:inputType="textEmailAddress" />-->
+        <!--<EditText-->
+            <!--android:id="@+id/barangay"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:layout_marginRight="4dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:hint="@string/hint_barangay"-->
+            <!--android:inputType="textEmailAddress" />-->
+        <!--<EditText-->
+            <!--android:id="@+id/district"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:layout_marginRight="4dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:hint="district"-->
+            <!--android:inputType="textEmailAddress" />-->
+        <!--<EditText-->
+            <!--android:id="@+id/loan"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:layout_marginRight="4dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:hint="@string/hint_loan"-->
+            <!--android:inputType="textEmailAddress" />-->
+        <!--<Button-->
+            <!--android:id="@+id/EditclientButton"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:text="@string/action_edit"-->
+            <!--/>-->
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

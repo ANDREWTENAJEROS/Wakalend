@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.heroku.andrewtenajeros.wakalend.adminmenu">
+
+    <android.support.design.widget.AppBarLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/NewclientButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top|left"-->
+        <!--android:layout_margin="20dp"-->
+        <!--android:padding="10dp"-->
+        <!--app:backgroundTint="@color/colorPrimary"-->
+        <!--app:layout_anchor="@+id/include"-->
+        <!--app:layout_anchorGravity="bottom|right"-->
+        <!--app:rippleColor="@color/colorPrimary"-->
+        <!--app:srcCompat="@android:drawable/ic_input_add"-->
+        <!--tools:ignore="RtlHardcoded" />-->
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_adminmenu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textcashonhand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:text="Daily Collection"
+            android:textAlignment="center"
+            app:layout_anchor="@+id/include"
+            app:layout_anchorGravity="top|center_horizontal" />
+
+        <TextView
+            android:id="@+id/cashvalue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:text="Loading"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_anchor="@+id/include"
+            app:layout_anchorGravity="top|center_horizontal" />
+
+        <Button
+            android:id="@+id/buttonTransfer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Transfer" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/ListViewCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="110dp"
+        android:padding="5dp" />
+
+
+</android.support.design.widget.CoordinatorLayout>
